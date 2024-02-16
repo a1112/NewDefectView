@@ -1,4 +1,4 @@
-QT += quick charts
+QT += quick charts network
 
 CONFIG += c++11
 
@@ -25,7 +25,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    FluTheme.qml \
     resource/icon/company2.png
 #    src/TaoCommon/TaoCommon.pri \
 #    src/TaoCommon/TaoCommonInstall.pri

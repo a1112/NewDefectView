@@ -101,6 +101,12 @@ Item {
                 font.bold: true
                 text: qsTr("离线判级")
             }
+            TabButton {
+                width:dpi
+                font.pixelSize: autoSize.titleButtonTextSize
+                font.bold: true
+                text: qsTr("样本管理")
+            }
         }
         Button{
             font.pixelSize: autoSize.titleButtonTextSize
@@ -195,7 +201,7 @@ Item {
             enabled:true
             text: qsTr("样本分析")
             onClicked: {
-                appGlobal.appType=appGlobal.minImageDefectType
+                appGlobal.appType=appGlobal.classifierType
             }
         }
     }

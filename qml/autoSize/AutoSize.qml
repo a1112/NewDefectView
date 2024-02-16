@@ -4,7 +4,7 @@ Item {
     property real titleHeadHeight: responsive.titleHeadHeight  // 标题高度
     property real titleButtonTextSize: 0.16*dpi
     property real buttonTextSize: 0.15*dpi
-    property real itemTabHeight: 0.4*dpi
+    property real itemTabHeight: 0.35*dpi
 
     property real itemListHeight: 0.3*dpi
 

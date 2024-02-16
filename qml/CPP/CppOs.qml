@@ -6,9 +6,11 @@ id:os
 }
 
 function system(url){
-    console.log(url)
     return os.system(url)
-
 }
-
+function moveFile(source,destination){
+    source = source.replace("file:///","")
+    destination = destination.replace("file:///","")
+    return os.moveFile(source,destination)
+}
 }

@@ -8,6 +8,7 @@ class OS : public QObject
 public:
     explicit OS(QObject *parent = nullptr);
     Q_INVOKABLE void system(QString text);
+    Q_INVOKABLE void moveFile(QString from, QString to);
 private:
     QProcess *process;
 };

@@ -22,11 +22,9 @@ ApplicationWindow{
         root.visible=false
         }
     }
-
     property string key_: ""
     property string loc_hostname: ""
     Material.elevation: 10
-
     function myClose(){
         // 关闭
         root.visible=false
@@ -74,36 +72,6 @@ ApplicationWindow{
             }
         }
     }
-    //            Menu{
-    //                id:delMenu
-    //                MenuItem{
-    //                    text: qsTr("ping")
-    //                    onClicked: {
-    //                        cppFuncs.os.system("cmd /k start ping "+loc_hostname)
-    //                    }
-    //                }
-    //                MenuItem{
-    //                    text: qsTr("远程该计算机")
-    //                    onClicked: {
-
-    //                        cppFuncs.os.system("mstsc /admin /v "+loc_hostname)
-    //                    }
-    //                }
-    //                MenuItem{
-    //                    text: qsTr("打开共享文件夹")
-    //                    onClicked: {
-    //                        cppFuncs.os.system("Explorer \\\\"+loc_hostname)
-    //                    }
-    //                }
-    //                MenuItem{
-    //                    text: qsTr("移除")
-    //                    onClicked: {
-    //    //                    coreModels.hostListModels.pop(index)
-    //                    }
-    //                }
-    //            }
-    //        }
-
     Popup {
            id: dialog
            modal: true // 这里设置为true表示模态对话框
@@ -129,11 +97,11 @@ ApplicationWindow{
                    anchors.horizontalCenter: parent.horizontalCenter
                    onClicked: {
                        let newModelList = coreModels.hostListModels
-                       newModelList.push(        {
-                                             hostname:ip,
+                       newModelList.push({
+                                             hostname:id_ip.text,
                                              port:809,
                                              protocol:"http://",
-                                             msg:msg
+                                             msg:id_msg.text
                                          })
                        coreModels.hostListModels=[]
                        coreModels.hostListModels=newModelList

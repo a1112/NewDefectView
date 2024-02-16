@@ -44,7 +44,7 @@ RowLayout{
                         contentWidth: it.width
                         contentHeight: it.height
                         id:flickable
-                        CanvasView{//                 <--------------------------------------------------
+                        CanvasView{//                 <- -------------------------------------------------
                             width:cav.width
                             id:it
                         }

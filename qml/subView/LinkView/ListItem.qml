@@ -5,21 +5,19 @@ import QtQuick.Layouts 1.15
 import "../../btns"
 
 Rectangle{
-
+    height: autoSize.itemTabHeight*1.5
      property string errorMsg: ""
      property string serverUrl: modelData.protocol+modelData.hostname+":"+modelData.port
      property int serverDelayed: -1
      id:root
      //                font.bold: true
-    color: Material.theme==Material.Dark?"#1f1f1f":"#CCCCCC"
-
-
+     color: Material.theme==Material.Dark?"#1f1f1f":"#CCCCCC"
      Material.background:coreModels.hostIndex===index?
                              Material.Teal:Material.buttonDisabledColor
      Timer{
          id:getServerDelayed
          interval: 2000
-         triggeredOnStart: true
+         triggeredOnStart: false
          running: root.visible
          onTriggered: {
              let sT = new Date().valueOf()
@@ -38,7 +36,7 @@ Rectangle{
                                     })
          }
      }
-    height: autoSize.itemTabHeight
+
     ItemDelegate{
        anchors.fill: parent
     }
@@ -153,7 +151,9 @@ Rectangle{
                     id:lbr
                     text: qsTr("移除")
                     onClicked: {
-                        coreModels.hostListModels.pop(index)
+                        let newModels =coreModels.hostListModels
+                        newModels.pop(index)
+                        coreModels.hostListModels=newModels
                     }
                 }
             }

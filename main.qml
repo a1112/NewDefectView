@@ -27,6 +27,7 @@ import "qml/JumpView"
 import "qml/UpApp"
 import "qml/autoSize"
 import "qml/SubView/LinkView"
+import "qml/TrainWindow"
 
 ApplicationWindow {
 //    flags:Qt.ToolTip
@@ -147,4 +148,13 @@ ApplicationWindow {
     }
     property UpAppCore upAppCore: UpAppCore{} // 更新程序
     property UpAppMenu upAppMenu: UpAppMenu{}
+
+    TrainWindow{
+        id: trainWindow
+    }
+
+    function openTrainWindow(){
+        trainWindow.visible=true
+    }
+
 }

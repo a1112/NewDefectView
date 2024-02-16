@@ -50,8 +50,8 @@ ColumnLayout{
         }
         Loader{
             asynchronous:true
-            active:appGlobal.appType==appGlobal.minImageDefectType
-            sourceComponent:SampleWindowView{
+            active:appGlobal.appType==appGlobal.classifierType
+            sourceComponent:SampleWindowView{ // 样本管理
                 width: root.width
                 height: root.height
             }
@@ -59,7 +59,7 @@ ColumnLayout{
         Loader{
             asynchronous:true
             active:appGlobal.appType==appGlobal.minImageDefectType
-            sourceComponent:DefectViewH{ // 纵向特殊的 缺陷显示
+            sourceComponent:SampleWindowView{ // 纵向特殊的 缺陷显示
                 width: root.width
                 height: root.height
             }

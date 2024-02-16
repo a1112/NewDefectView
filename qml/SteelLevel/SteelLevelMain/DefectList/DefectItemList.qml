@@ -11,7 +11,6 @@ ListView {
     currentIndex: steelLevelCore.selectTopIndex===topIndex&&itemView&& !steelLevelCore.isAllDefectModel?steelLevelCore.currentIndex:0
     property bool itemView: steelLevelCore.visDefectClass===index
     property var gradList: {return {}}
-
     function clear_(){
         gradList={}
         return root.model.clear()
@@ -91,11 +90,9 @@ ListView {
             }
             LabelBase{
                 text: grade
-
             }
         }
         width: root.width
-
     }
 
     header:Item{
@@ -182,10 +179,6 @@ ListView {
                 font.pixelSize: 18
             }
         }
-
-
-
     }
-
 }
 

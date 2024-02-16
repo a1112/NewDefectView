@@ -11,7 +11,7 @@ Item {
     property int appType: 0
     property var appTypeAll: [
         appGlobal.imageType,appGlobal.defectType,
-        appGlobal.steelLevelType,appGlobal.minImageDefectType
+        appGlobal.steelLevelType,appGlobal.classifierType
     ]
 
     readonly property int imageType: 0   // 图像 分析控制台

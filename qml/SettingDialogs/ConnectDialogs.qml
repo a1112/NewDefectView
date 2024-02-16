@@ -42,7 +42,7 @@ Menu{
                 Timer{
                     id:getServerDelayed
                     interval: 2000
-                    triggeredOnStart: true
+                    triggeredOnStart: false
                     running: root.visible
                     onTriggered: {
                         let sT = new Date().valueOf()

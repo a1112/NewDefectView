@@ -3,8 +3,6 @@ import QtQuick.Controls 2.15
 import "../../../Sql/Obj"
 Column{
     id:root
-
-
     property int visCount: 1
     property int maxItemHeight: (root.height-(defCount*30))/Math.max(1,visCount)+30
     property int defCount: 0
@@ -85,5 +83,6 @@ function flushItemsView(){
 Component.onCompleted: {
     defectListCore.shrinkDefectListFunc=shrinkDefectList_
 }
+
 }
 

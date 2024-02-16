@@ -347,5 +347,30 @@
         <file>qml/btns/TextButton.qml</file>
         <file>qml/btns/ItemDelegateBase.qml</file>
         <file>qml/SampleWindow/SampleWindowView.qml</file>
+        <file>qml/SampleWindow/CenterToolView.qml</file>
+        <file>qml/SampleWindow/Sample/SampleViewView.qml</file>
+        <file>qml/SampleWindow/Sample/ImageViewItem.qml</file>
+        <file>qml/SampleWindow/Sample/ImageShowDraw.qml</file>
+        <file>qml/SampleWindow/Sample/HeadView.qml</file>
+        <file>qml/SampleWindow/Sample/core/Core.qml</file>
+        <file>qml/SampleWindow/Center/CenterView.qml</file>
+        <file>qml/SampleWindow/Center/DefectItemList.qml</file>
+        <file>qml/SampleWindow/Core/SampleCore.qml</file>
+        <file>qml/SampleWindow/Core/SampleSettings.qml</file>
+        <file>qml/SampleWindow/Center/DefectCountL.qml</file>
+        <file>qml/Jump.qml</file>
+        <file>qml/SampleWindow/Core/SampleItemCore.qml</file>
+        <file>qml/TrainWindow/TrainWindow.qml</file>
+        <file>qml/TrainWindow/SampItem.qml</file>
+        <file>qml/TrainWindow/Samp/SampBase.qml</file>
+        <file>qml/TrainWindow/Samp/SampComboBox.qml</file>
+        <file>qml/TrainWindow/ClassificationSettingPage.qml</file>
+        <file>qml/TrainWindow/ApiCore/Api.qml</file>
+        <file>qml/TrainWindow/ApiCore/ServerAdd.qml</file>
+        <file>qml/TrainWindow/Samp/SampServer.qml</file>
+        <file>qml/TrainWindow/SettingPage.qml</file>
+        <file>qml/TrainWindow/Samp/SampModelChange.qml</file>
+        <file>qml/TrainWindow/Samp/ChooserSample.qml</file>
+        <file>qml/TrainWindow/Samp/FileSalectSample.qml</file>
     </qresource>
 </RCC>
