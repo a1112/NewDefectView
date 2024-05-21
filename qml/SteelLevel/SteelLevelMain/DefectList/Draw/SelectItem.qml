@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 SelectRectangle{
+    id:root
 // 区域选择的基础矩形
 property real startX: 0
 property real startY: 0
@@ -35,12 +36,14 @@ y:Math.min(startY,endY)
 //onEndXChanged: refreshX()
 //onEndYChanged: refreshY()
 Label{
+    visible: root.width>1
 color: "red"
 anchors.horizontalCenter: parent.horizontalCenter
 text: coreModels.unitType==="m"?(mm_w/1000)+" m": mm_w+" mm"
 font.pointSize: 12
 }
 Label{
+    visible: root.width>1
 color: "red"
 anchors.verticalCenter: parent.verticalCenter
 text:  coreModels.unitType==="m"?(mm_h/1000)+" m": mm_h+" mm"

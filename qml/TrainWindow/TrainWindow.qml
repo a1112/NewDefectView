@@ -1,6 +1,9 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+
+
+
 import "Samp"
 import "ApiCore"
 ApplicationWindow {
@@ -25,11 +28,38 @@ ApplicationWindow {
             id:trainModel
             title: "训练模式"
         }
+        FileSalectSample{
+            title: "配置文件路径"
+            onValueChanged: {
+            // 配置文件路径改变
+                trainApi.trainConfigFilePath = value
+                trainApi.trainConfig["value"]=value
+            }
+        }
         Item{
             Layout.fillWidth: true
             Layout.fillHeight: true
-            SettingPage{
+            Flickable{
+            anchors.fill: parent
+            contentWidth:image.width
+            contentHeight:image.height
+            clip: true
+            ScrollBar.vertical: ScrollBar{}
+            ScrollBar.horizontal: ScrollBar{}
+            Image {
+                id: image
+                source:trainApi.lexer_image
             }
+            }
+//            WebView {
+//                    anchors.fill: parent
+//                    url: "data:text/html;charset=utf-8,"+trainApi.lexer_text
+//                }
+
+
+
+//            SettingPage{
+//            }
 //            StackLayout{
 //                anchors.fill: parent
 //                currentIndex: trainModel.currentIndex

@@ -14,6 +14,7 @@ Rectangle{
     width:boxW*currentImageScale
     height:boxH*currentImageScale
     LabelFootInfoKey{
+        visible: imageViewCore.showDefectText
         anchors.bottom: parent.top
         text: control.getNameById(defectID)
         color:Qt.lighter(control.getColorById(defectID))//Material.color(Material.Red)

@@ -24,7 +24,8 @@ Item {
             width:id_icon.width
             Company2Icon{
                 id:id_icon
-                height:root.height
+                anchors.verticalCenter: parent.verticalCenter
+                height:root.height*0.7
                 MouseArea{
                     acceptedButtons: Qt.AllButtons
                     anchors.fill: parent
@@ -40,12 +41,14 @@ Item {
                 }
             }
         }
+        clip: true
         Repeater
         {
-            model: [{show_text:"缺陷分析"},
+            model: [
+               // {show_text:"缺陷分析"},
                 {show_text:"缺陷类别"},
                 {show_text:"报警设置"},
-                {show_text:"历史记录"},
+                // {show_text:"历史记录"},
                 {show_text:"查询"}]
             delegate:
                 Item{
@@ -54,7 +57,7 @@ Item {
                 Button{
                     anchors.fill: parent
                     text: modelData["show_text"]
-                    font.pixelSize: autoSize.titleButtonTextSize//0.15*dpi
+                    // font.pixelSize: autoSize.titleButtonTextSize//0.15*dpi
                     font.bold: true
                     onClicked: {
                         console.log("点击了 "+modelData["show_text"])
@@ -72,20 +75,21 @@ Item {
                 }}
         }
         TabBar{
-            height: root.height
+
+            height: parent.height
             currentIndex:appGlobal.appTypeAll.indexOf(appGlobal.appType)
             onCurrentIndexChanged: {
                 appGlobal.appType = appGlobal.appTypeAll[currentIndex]
             }
             TabButton {
-                width:dpi
-                font.pixelSize: autoSize.titleButtonTextSize
+ height: parent.height
+                // font.pixelSize: autoSize.titleButtonTextSize
                 font.bold: true
                 text: qsTr("图像分析")
             }
             TabButton {
-                width:dpi
-                font.pixelSize: autoSize.titleButtonTextSize
+ height: parent.height
+                // font.pixelSize: autoSize.titleButtonTextSize
                 font.bold: true
                 text: qsTr("缺陷分析")
             }
@@ -96,16 +100,17 @@ Item {
             //                    text: qsTr("缺陷（小图模式）")
             //                }
             TabButton {
-                width:dpi
-                font.pixelSize: autoSize.titleButtonTextSize
+ height: parent.height
+                // font.pixelSize: autoSize.titleButtonTextSize
                 font.bold: true
                 text: qsTr("离线判级")
             }
             TabButton {
-                width:dpi
-                font.pixelSize: autoSize.titleButtonTextSize
+ height: parent.height
+                // font.pixelSize: autoSize.titleButtonTextSize
                 font.bold: true
                 text: qsTr("样本管理")
+
             }
         }
         Button{
@@ -143,7 +148,7 @@ Item {
             LabelBase{
                 anchors.horizontalCenter: parent.horizontalCenter
                 id:lt
-                font.pixelSize: autoSize.titleButtonTextSize*1.6
+                // font.pixelSize: autoSize.titleButtonTextSize*1.6
                 text: api.apiConfig.msg
 
             }
@@ -162,7 +167,7 @@ Item {
             Layout.fillWidth: true
         }
         SwitchDelegate{
-            font.pixelSize: autoSize.titleButtonTextSize
+            // font.pixelSize: autoSize.titleButtonTextSize
             text: qsTr("实时刷新("+coreState.realTime+")")
             checked:coreState.realAutoType
             onCheckedChanged: {

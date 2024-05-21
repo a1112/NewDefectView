@@ -39,13 +39,21 @@ Item {
         Layout.fillWidth: true
 
     }
+        Row{
+                        Layout.alignment: Qt.AlignHCenter
+                        spacing: 10
+        Button{
+            text: "预测"
+            onClicked: {
+                openTest()
+            }
+        }
         Button{
             text: "训练"
-            Layout.alignment: Qt.AlignHCenter
             onClicked: {
                 openTrainWindow()
-                trainWindow
             }
+        }
         }
     }
 

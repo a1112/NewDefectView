@@ -10,6 +10,16 @@ Menu {
     MenuItem{
         text:"自动播放"
     }
+
+    MenuItem{
+        text: qsTr("打开所在位置")
+        onTriggered: {
+            console.log(source_url)
+            api.getAppFlush()
+            Qt.openUrlExternally(source_url)
+        }
+    }
+
     MenuItem{
         text: qsTr("查看原图 ")
         onClicked: {

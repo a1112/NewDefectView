@@ -32,7 +32,6 @@ Column{
     font.pixelSize: 25
     color:  control.getColorById(steelLevelCore.selectDefect.defectID)
     }
-
     }
     Rectangle{
     width: parent.width

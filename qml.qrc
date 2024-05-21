@@ -372,5 +372,8 @@
         <file>qml/TrainWindow/Samp/SampModelChange.qml</file>
         <file>qml/TrainWindow/Samp/ChooserSample.qml</file>
         <file>qml/TrainWindow/Samp/FileSalectSample.qml</file>
+        <file>qml/TestWindow/TestWindow.qml</file>
+        <file>qml/autoSize/SizeMange.qml</file>
+        <file>qml/Labels/MsgLabel.qml</file>
     </qresource>
 </RCC>

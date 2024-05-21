@@ -66,7 +66,7 @@ Dialog {
         NumberAnimation { property: "opacity"; from: 1.0; to: 0.0;duration:400 }
     }
     MsgView{
-        x:-width
+        x:image.width
         height:image.height
     }
 

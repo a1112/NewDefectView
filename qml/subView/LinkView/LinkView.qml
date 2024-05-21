@@ -9,7 +9,7 @@ import "../../btns"
 ApplicationWindow{
     id:root
     visible: false
-    width: 700
+    width: 1000
     height: 500
     title: "切换服务器连接"
     flags: Qt.Dialog

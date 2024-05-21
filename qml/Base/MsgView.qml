@@ -3,44 +3,63 @@ import QtQuick.Controls 2.15
 import "../Base"
 import "../Labels"
 import QtQuick.Layouts 1.15
+    /*
+                        "leftInImg": defect.leftInImg,
+                        "rightInImg": defect.rightInImg,
+                        "topInImg": defect.topInImg,
+                        "bottomInImg": defect.bottomInImg,
+                        "leftInSteel": defect.leftInObj,
+                        "rightInSteel": defect.rightInObj,
+                        "topInSteel": defect.topInObj,
+                        "bottomInSteel": defect.bottomInObj,
 
-    MsgBgBase {
-        height:1*dpi
-        width:1*dpi
 
-    ColumnLayout{
-         width: parent.width
+
+    */
+
+
+    Column{
         id:col
-            TitleLabel{
+        Row{
+            spacing: 50
+            MsgLabel{
                 color:"#fff"
                 text: control.getNameById(defectItemData.defectID)
-                Layout.alignment: Qt.AlignHCenter
         }
-            TitleLabel{
+            MsgLabel{
+                color:"#777"
+                font.pointSize: 10
+                text: defectItemData.defectNo
+        }
+        }
+            MsgLabel{
                 color:"#fff"
-                text: "相机号: "+defectItemData.cameraId+" "+"索引: "+defectItemData.imageIndex+" 缺陷ID: "+defectItemData.defectID
-                Layout.alignment: Qt.AlignHCenter
+                text: "相机号: "+defectItemData.cameraId
         }
-                    TitleLabel{
+            MsgLabel{
+                color:"#fff"
+                text: "图像索引: "+defectItemData.imageIndex
+        }
+            MsgLabel{
+                color:"#fff"
+                text: "缺陷ID: "+defectItemData.defectID
+        }
+
+            MsgLabel{
                         color:"#fff"
                         text: "缺陷等级: "+defectItemData.grade
-                        Layout.alignment: Qt.AlignHCenter
                 }
-                TitleLabel{
+            MsgLabel{
                     color:"#fff"
-                    text: "距头: "+defectItemData.topInImg/1000 +" m"
-                    Layout.alignment: Qt.AlignHCenter
+                    text: "距头: "+defectItemData.topInSteel/1000//defectItemData.topInImg +" m"
                 }
-                TitleLabel{
+            MsgLabel{
                     color:"#fff"
-                    text: "距边: "+defectItemData.leftInImg/1000 +" m  "+defectItemData.rightInImg/1000 +" m"
-                    Layout.alignment: Qt.AlignHCenter
+                    text: "距边: "+defectItemData.leftInSteel/1000
                 }
-                TitleLabel{
+            MsgLabel{
                     color:"#fff"
                     text: "置信度: "+defectItemData.defectCoefficient
-                    Layout.alignment: Qt.AlignHCenter
             }
     }
 
-}

@@ -28,6 +28,7 @@ import "qml/UpApp"
 import "qml/autoSize"
 import "qml/SubView/LinkView"
 import "qml/TrainWindow"
+import "qml/TestWindow"
 
 ApplicationWindow {
 //    flags:Qt.ToolTip
@@ -50,8 +51,11 @@ ApplicationWindow {
     width:screenPixWidth*0.85
     height:screenPixHeight*0.85
 
+    SizeMange{
+        id:sizeMange
 
-    property AutoSize autoSize: AutoSize{}
+    }
+    property AutoSize autoSize: sizeMange.currentAutoSize
 
     Component.onCompleted: {
         console.log("App INFO")
@@ -71,8 +75,8 @@ ApplicationWindow {
 //             name: "com.qt.category"
 //             defaultLogLevel: LoggingCategory.Info
 //         }
-    property real appScale: screenSize>20?1:screenSize>16?0.8:0.7
-    property int dpi: Screen.pixelDensity*25.4*appScale
+    property real appScale:autoSize.appScale//
+    property int dpi: autoSize.dpi
     property Core core: Core{}
     property CoreStyle coreStyle: CoreStyle{}   // STYLE
     property CoreConfig coreConfig: CoreConfig{}
@@ -148,8 +152,8 @@ ApplicationWindow {
     }
     property UpAppCore upAppCore: UpAppCore{} // 更新程序
     property UpAppMenu upAppMenu: UpAppMenu{}
-
     TrainWindow{
+        visible: false
         id: trainWindow
     }
 
@@ -157,4 +161,12 @@ ApplicationWindow {
         trainWindow.visible=true
     }
 
+    TestWindow{
+        visible: false
+        id: testWindow
+
+    }
+    function openTest(){
+        testWindow.visible=true
+    }
 }

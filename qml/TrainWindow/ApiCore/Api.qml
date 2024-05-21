@@ -10,6 +10,20 @@ Item {
         return {}
     }
 
+    property string trainConfigFilePath: ""
+    onTrainConfigFilePathChanged: {
+//        get_lexer_by_file(trainConfigFilePath,(result)=>{
+//            lexer_text=result
+//        },(error)=>{
+//            lexer_text=error
+//        })
+        lexer_image=serverAdd.url("get_lexer_by_file",trainConfigFilePath)
+    }
+
+
+    property var lexer_image
+
+
     function getTrainData(){
         trainConfig["frame"]=currentFrame
         return trainConfig
@@ -50,5 +64,9 @@ Item {
 
     function train(success, failure){
         return ajax.postJson(serverAdd.url("train"),getTrainData(),success, failure)
+    }
+
+    function get_lexer_by_file(file,success, failure){
+        return ajax.get(serverAdd.url("get_lexer_by_file",file),success, failure)
     }
 }

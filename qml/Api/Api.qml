@@ -24,6 +24,10 @@ Item {
         return ajax.get(apiConfig.url("getDefectView",steelId),success,failure)
     }
 
+    function getDefectViewBySteelId_predict(steelId,success,failure){
+        return ajax.get(apiConfig.url("getDefectView_predict",steelId),success,failure)
+    }
+
     function getUserDefectViewBySteelId(steelId,success,failure){   //  获取用户标注的缺陷
         return ajax.get(apiConfig.url("getUserDefectView",steelId),success,failure)
     }
@@ -67,8 +71,6 @@ Item {
         return ajax.get(apiConfig.url("searchByDate",startTime.format("yyyy-MM-dd hh:mm:ss"),
                                        endTime.format("yyyy-MM-dd hh:mm:ss"),args),success,failure)
     }
-
-
     // ------------- cimg -----------------
 
     function getCimg(cameraIndex,seqNo,imageIndex,resize){
@@ -79,13 +81,11 @@ Item {
         return ajax.get(apiConfig.url("widths",steelId),success,failure)
     }
     function getDoc(){
-        return apiConfig.url("doc")
+        return apiConfig.url("docs")
     }
     function restartServer(success,failure){
         return ajax.get(apiConfig.url("restartServer"),success,failure)
     }
-
-
     function getGradeInfo(seqNo,success,failure){
         return ajax.get(apiConfig.url("getGradeInfo",seqNo),success,failure)
     }
@@ -93,12 +93,20 @@ Item {
     //------------------version---------------------
     function client_update(version,success,failure){
         return ajax.get(apiConfig.url("client_update",version),success,failure)
-
     }
 
     function getUpdateUrl()
     {
         return "cmd /k update.exe ip="+apiConfig.hostname+" port="+apiConfig.port
     }
+
+    function getSharedFolder(url_,success,failure){
+        return ajax.get(apiConfig.url("getSharedFolder",url_),success,failure)
+
+    }
+
+
+
+
 
 }

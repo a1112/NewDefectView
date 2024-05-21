@@ -101,6 +101,28 @@ Item {
     }
 
 
+    function refreshDefectViewBySteelId_predict(steelId){
+        //  刷新视图, 重新运算
+        return api.getDefectViewBySteelId_predict(steelId,(result)=>{
+                                              let reData=JSON.parse(result)
+                                              coreModels.defectListModelDict={}
+                                              coreModels.currentDefectItemModel.clear()
+                                              coreModels.defectListModel.clear()
+                                              // updata 宽度轮廓数据
+                                              coreObj.upDefcts=[]
+                                              coreObj.downDefects=[]
+                                              // if(appGlobal.appType==1){
+                                              //     coreObj.defectShowViewUp.refreshView(reData["up"])
+                                              //     coreObj.defectShowViewDown.refreshView(reData["down"])
+                                              // }
+
+                                          },
+                                          (errorMsg)=>{
+                                              //globalDialog.openMsgFialog("缺陷视图初始化失败！  "+steelId+" "+errorMsg)
+                                          })
+
+    }
+
     function refreshDefectViewBySteelId(steelId){
         //  刷新视图
         return api.getDefectViewBySteelId(steelId,(result)=>{

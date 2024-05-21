@@ -80,9 +80,10 @@ Item {
     BorderView{
         border.color: isMenuVisibleItem?"blue":"#55dddddd"
         Label{
-            anchors.right: parent.right
-            color: "#fff"
+            // anchors.right: parent.right
+            color: "red"
             text: index
+            font.pixelSize: 20
         }
 
         anchors.fill: parent

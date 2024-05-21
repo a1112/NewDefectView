@@ -4,6 +4,6 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls.Material 2.15
 
 Label {
-    font.pixelSize: autoSize.textSize
+    // font.pixelSize: autoSize.textSize
 
 }

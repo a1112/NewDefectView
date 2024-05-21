@@ -9,7 +9,6 @@ Item {
     height:  viewMoels.imageCount *itemHeight
     property real canvasWidth: root.width/viewMoels.cameraCount
     property real canvasHeight: itemHeight
-
     property int w_width: 10
     Repeater{
         model:steelLevelCore.canVisDefectLabel? viewMoels.imageCount:[]

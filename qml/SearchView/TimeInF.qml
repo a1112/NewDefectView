@@ -11,7 +11,7 @@ Row {
     property alias dayIndex: dTF.currentIndex
     property date date
     property alias title: title_id.text
-
+    visible: false
     spacing: 5
     LabelBase{
         id:title_id
