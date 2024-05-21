@@ -375,5 +375,10 @@
         <file>qml/TestWindow/TestWindow.qml</file>
         <file>qml/autoSize/SizeMange.qml</file>
         <file>qml/Labels/MsgLabel.qml</file>
+        <file>qml/SubView/LinkView/TextFieldBase.qml</file>
+        <file>qml/Comps/PopupBase/PopupBase.qml</file>
+        <file>qml/Base/ImageButton.qml</file>
+        <file>qml/SteelLevel/ExportView/ExportView.qml</file>
+        <file>qml/SteelLevel/ExportView/SampleItem.qml</file>
     </qresource>
 </RCC>

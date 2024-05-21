@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.15
 import "Head"
 import "Footer"
 import "../../Comps/SimpleList"
+import "../../Base"
 SplitView{
     orientation :Qt.Vertical
 ColumnLayout {
@@ -21,6 +22,27 @@ ColumnLayout {
             anchors.fill: parent
             LevelSelect{
             }
+            Item{
+                Layout.fillWidth: true
+                height: 1
+            }
+            ItemDelegate{
+                height: 30
+                width: 35
+            EffectImage{
+                height: 30
+                source: coreStyle.getIcon("uploading")
+            }
+            onClicked: {
+                console.log("导出判级信息")
+                levelExportView.open()
+            }
+            }
+            Item{
+                width: 10
+                height: 1
+            }
+
         }
     }
     SteelListBase{

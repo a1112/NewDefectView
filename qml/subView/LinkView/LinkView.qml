@@ -80,14 +80,19 @@ ApplicationWindow{
            anchors.centerIn: parent
            Column{
                id:row
+                   TextFieldBase{
 
-                   TextField{
-                       width: dialog.width-20
                        id:id_ip
                        placeholderText:qsTr("ip地址")
                    }
-                   TextField{
-                       width: dialog.width-20
+                    TextFieldBase{
+
+                       id:port_msg
+                       text: "809"
+                       placeholderText:qsTr("端口")
+                   }
+                   TextFieldBase{
+
                        id:id_msg
                        placeholderText:qsTr("描述信息")
                    }
@@ -99,7 +104,7 @@ ApplicationWindow{
                        let newModelList = coreModels.hostListModels
                        newModelList.push({
                                              hostname:id_ip.text,
-                                             port:809,
+                                             port:parseInt(port_msg.text),
                                              protocol:"http://",
                                              msg:id_msg.text
                                          })

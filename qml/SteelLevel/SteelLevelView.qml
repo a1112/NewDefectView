@@ -1,10 +1,12 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import "ExportView"
 import "../Base"
 import "SteelLevelList"
 import "SteelLevelMain"
 import "../Core"
 import "../MainShow/DefectShow/Core"
+import "../Comps/PopupBase"
 Item {
 //    property ItemRoot currentItenModel:ItemRoot{}
     property LevelCore steelLevelCore: LevelCore{   // 判级核心
@@ -30,4 +32,12 @@ Item {
             }
         }
     }
+
+
+    ExportView{
+                id:levelExportView
+
+    }
+
+
 }
