@@ -6,14 +6,13 @@ PopupBase{
     width: height
     height: parent.height/2
     title:"数据导出"
-    comp:
-
+    body:
         Column{
             width: root.width
-
-            SampleItem{
+            SampleItemFileOut{
             width: root.width
             }
 
     }
+    footer:Item{}
 }

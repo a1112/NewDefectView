@@ -38,7 +38,7 @@ Item {
     Timer{
         id:realTime_id
         running: !realAutoType
-        interval: 1500
+        interval: 5000
         repeat: true
         onTriggered: {
             realTime-=1

@@ -7,49 +7,55 @@ import "../../Base"
 Popup  {
     id:root
     property alias title: title.text
-    property Component comp
+    property Component body
+    property Component footer
     ColumnLayout{
         anchors.fill: parent
         RowLayout{
             Layout.fillWidth:true
             height: 45
             Item{
-            Layout.fillWidth:true
-            height: 1
+                Layout.fillWidth:true
+                height: 1
             }
-        Label{
-            id:title
-            text: "数据导出"
-            font.pixelSize: 30
-            font.bold: true
-            color:Material.color(Material.Blue)
-        }
-
-        Item{
-        Layout.fillWidth:true
-        height: 1
-        }
-
-        ImageButton{
-            source: coreStyle.getIcon("NO")
-            onClicked: root.close()
-        }
+            Label{
+                id:title
+                text: "数据导出"
+                font.pixelSize: 30
+                font.bold: true
+                color:Material.color(Material.Blue)
             }
+
+            Item{
+                Layout.fillWidth:true
+                height: 1
+            }
+
+            ImageButton{
+                source: coreStyle.getIcon("NO")
+                onClicked: root.close()
+            }
+        }
         //--------------------------------------------
 
 
         Item{
             Layout.fillWidth: true
             Layout.fillHeight: true
+            Item{
+                anchors.centerIn: parent
+                width: parent.width-10
+                height: parent.height-10
 
-            Loader{
-
-            sourceComponent:comp
-
+                Loader{
+                    sourceComponent:body
+                }
             }
-
-
         }
+        Loader{
+            sourceComponent:footer
+        }
+
 
     }
 

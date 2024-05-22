@@ -32,11 +32,12 @@ Item {
     }
     function _selectLastModelItem(){
             while (coreModels.mainListModel.count>coreConfig.maxListCount){
-                // 超过，移除N
                 coreModels.mainListModel.remove(0)
             }
+            if( coreState.currentSteelIndex!==coreModels.mainListModel.count-1){
             coreState.currentSteelIndex=0
         coreState.currentSteelIndex=coreModels.mainListModel.count-1
+                }
     }
     function selectLastModelItem(){
         if(coreState.realAutoType){

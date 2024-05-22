@@ -380,5 +380,8 @@
         <file>qml/Base/ImageButton.qml</file>
         <file>qml/SteelLevel/ExportView/ExportView.qml</file>
         <file>qml/SteelLevel/ExportView/SampleItem.qml</file>
+        <file>qml/SteelLevel/ExportView/SampleItemBase.qml</file>
+        <file>qml/SteelLevel/ExportView/SampleItemFileOut.qml</file>
+        <file>qml/SteelLevel/ExportView/LabelBase.qml</file>
     </qresource>
 </RCC>
