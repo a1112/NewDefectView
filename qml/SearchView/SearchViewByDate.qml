@@ -9,7 +9,6 @@ ColumnLayout {
     function searchByDate(){
         root.search(fromDate,toDate)
     }
-    property TimeInF timeF
     property DataTimeSelectItem dataTimeSelectItem
     property alias fromDate: startTime_id.currentDate
     property alias toDate: endTime_id.currentDate
@@ -58,6 +57,7 @@ ColumnLayout {
         Button{
             text: qsTr("查询今天")
             onClicked: {
+
             }
         }
         Button{
@@ -70,10 +70,10 @@ ColumnLayout {
             Layout.fillWidth: true
             height: 1
         }
-        //        CheckDelegate{
-        //            id:steelOmly
-        //            text: qsTr("至今")
-        //        }
+               CheckDelegate{
+                   id:steelOmly
+                   text: qsTr("至今")
+               }
 
     }
 //    ColumnLayout{
@@ -132,14 +132,14 @@ ColumnLayout {
 
 
 
-//    PopDateSelect{
-//        id:popd
-//        onSelectDate:{
-//            dataTimeSelectItem.setDate(date)
-//            popd.close()
-//        }
+   // PopDateSelect{
+   //     id:popd
+   //     onSelectDate:{
+   //         dataTimeSelectItem.setDate(date)
+   //         popd.close()
+   //     }
 
-//    }
+   // }
     SearchFilterDefect{}
 //    SearchFilterSteelType{}
 

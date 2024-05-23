@@ -9,7 +9,7 @@ Menu{
     id:root
     dim:true
     height: 6*dpi
-    width: 7*dpi
+    width: 10*dpi
     property string key_: ""
     Material.elevation: 10
 

@@ -383,5 +383,7 @@
         <file>qml/SteelLevel/ExportView/SampleItemBase.qml</file>
         <file>qml/SteelLevel/ExportView/SampleItemFileOut.qml</file>
         <file>qml/SteelLevel/ExportView/LabelBase.qml</file>
+        <file>qml/SteelLevel/ExportView/TextFieldBase.qml</file>
+        <file>qml/SteelLevel/ExportView/SampleItemTime.qml</file>
     </qresource>
 </RCC>

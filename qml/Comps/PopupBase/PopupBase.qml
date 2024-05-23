@@ -44,15 +44,18 @@ Popup  {
             Layout.fillHeight: true
             Item{
                 anchors.centerIn: parent
-                width: parent.width-10
-                height: parent.height-10
+                width: parent.width-50
+                height: parent.height-20
 
                 Loader{
+                    width: parent.width
                     sourceComponent:body
                 }
             }
         }
         Loader{
+            Layout.fillWidth: true
+            height: 40
             sourceComponent:footer
         }
 

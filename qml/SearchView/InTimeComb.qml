@@ -12,7 +12,7 @@ Row {
     TextFieldTime{
         id:hours_comb
         model: 24
-        placeholderText:"时"
+        placeholderText:"点"
         width: 0.9*dpi
         currentIndex: 0
     }

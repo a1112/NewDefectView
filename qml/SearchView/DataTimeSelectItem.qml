@@ -10,6 +10,16 @@ RowLayout{
     property date currentDate: new Date(tfIn.fullYearIndex+2020,tfIn.monthIndex,tfIn.dayIndex+1,
                                         to_ts.hoursIndex,to_ts.minutesIndex,to_ts.secondsIndex
                                         )
+
+    PopDateSelect{
+        id:popd
+        onSelectDate:{
+            setDate(date)
+            popd.close()
+        }
+
+    }
+
     function setDate(date){
         let yearIndex=date.getFullYear()-2020
         let monIndex=date.getMonth()
@@ -29,22 +39,17 @@ RowLayout{
         id:title_id
         text: "起始"
     }
-
             TimeInF{
-
                 id:tfIn
             }
             InTimeComb{
                 id:to_ts
-
             }
             MoreButton{
                 height: 30
                 width: 30
                 Layout.alignment: Qt.AlignVCenter
                 onClicked:{
-                    timeF=tfIn
-                    dataTimeSelectItem=root
                     popd.popDate(currentDate)
                 }
             }
