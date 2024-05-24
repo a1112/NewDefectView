@@ -106,7 +106,16 @@ Item {
     }
 
 
+    function getSteelLevelInfo(success,failure){
+        return ajax.get(apiConfig.url("steelLevel/info"),success,failure)
+    }
+    function toTimeString(timeItem){
+        return timeItem.getFullYear()+"-"+timeItem.getMonth()+"-"+timeItem.getDay()+" "+timeItem.getHours()+":"+timeItem.getMinutes()+":"+timeItem.getSeconds()
+
+    }
+    function exportSteelLevelByTime(startTime,endTime,fileName,success,failure){
+        return ajax.get(apiConfig.url("steelLevel/exportSteelLevelByTime",startTime.format("yyyy-MM-dd hh:mm:ss"),endTime.format("yyyy-MM-dd hh:mm:ss"),fileName),success,failure)
 
 
-
+    }
 }

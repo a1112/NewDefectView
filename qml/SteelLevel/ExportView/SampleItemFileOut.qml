@@ -5,13 +5,14 @@ import Qt.labs.platform 1.1
 import "../../SearchView"
 SampleItemBase {
     id:sample_fileOut
-
-    FileDialog{
+    property alias fileName: textField.text
+    FolderDialog{
         id:fileSelect
         onAccepted:{
-            console.log("选择文件",currentFile)
-            textField.text=currentFile
+            console.log("选择",currentFolder)
+            textField.text=currentFolder
         }
+        acceptLabel:"保存"
     }
 
     LabelBase{

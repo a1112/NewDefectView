@@ -32,6 +32,7 @@ property var t : [{"seqNo":616748,"imageCount":15,"steelLen":
      "imageIndex":[0,1,2,3,4,5,6,7,8,9,10,11,12,13]}]
     property int  y_border:  root.cross_y/imageShowHeight*coreConfig.imageHeight
     onY_borderChanged: {
+
             let t_Value=imageWidthInfoList[showInageIndex_x]["steelLen"][showInageIndex_y]
             let b_Value=imageWidthInfoList[showInageIndex_x]["steelLen"][showInageIndex_y+1]
             mm_h=t_Value+(b_Value-t_Value)*((root.cross_y+startY_)/imageShowHeight-showInageIndex_y)

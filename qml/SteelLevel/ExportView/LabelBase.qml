@@ -3,5 +3,5 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
 Label {
-    font.pointSize: 25
+    font.pointSize: 20
 }

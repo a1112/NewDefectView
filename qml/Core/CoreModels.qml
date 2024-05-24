@@ -59,7 +59,6 @@ Item {
             }
             return listColorDict[st_id]
         }
-
     }
 
 

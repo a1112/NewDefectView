@@ -2,6 +2,14 @@ import QtQuick 2.15
 import "../../../Base"
 import "Draw"
 Item {
+    function getSteelLenData(index_, viewMoels_){
+        let steelLens = viewMoels_.imageWidthInfoList[0]["steelLen"]
+            if (steelLens)
+                return viewMoels_.imageWidthInfoList[0]["steelLen"][index_]/1000
+            else
+                return 0
+    }
+
     id:root
     property real itemWidth: width/viewMoels.cameraCount
     onItemWidthChanged: steelLevelCore.itemWidth=itemWidth
@@ -25,7 +33,7 @@ Item {
                     }
                 }
             LabelBase{
-                text: "  "+viewMoels.imageWidthInfoList[0]["steelLen"][index]/1000
+                text: "  "+getSteelLenData(index, viewMoels)
                 color: "red"
                 background: Rectangle{
                     color: "#000"
@@ -39,7 +47,6 @@ Item {
                 }
             }
             }
-
         }
     }
     Item{

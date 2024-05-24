@@ -385,5 +385,8 @@
         <file>qml/SteelLevel/ExportView/LabelBase.qml</file>
         <file>qml/SteelLevel/ExportView/TextFieldBase.qml</file>
         <file>qml/SteelLevel/ExportView/SampleItemTime.qml</file>
+        <file>qml/SteelLevel/ExportView/SampleItemMsg.qml</file>
+        <file>qml/SteelLevel/ExportView/SampleItemName.qml</file>
+        <file>js/dateformat.js</file>
     </qresource>
 </RCC>
