@@ -146,6 +146,9 @@ Item {
             protocol:"http://",
             msg:"本地测试"
         }]
+
+    property var allHostListModels: []
+
     property int hostIndex: 0
 
 
@@ -153,6 +156,7 @@ Item {
     SettingsBase{
         category:"hostConfig"
         property alias hostListModels: root.hostListModels
+        property alias allHostListModels: root.allHostListModels
         property alias hostList: root.hostIndex
     }
     property ListModel upWidthModel: ListModel{

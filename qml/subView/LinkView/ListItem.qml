@@ -25,6 +25,17 @@ Rectangle{
                                         let eT = new Date().valueOf()
                                         let delTime=eT-sT
                                         root.serverDelayed=delTime
+                                        if (!hasServerIpList){
+                                            api._getServerList_(
+                                                root.serverUrl,(result)=>{
+                                                    let data = JSON.parse(result)
+                                                    setServerIpList(data)
+                                                },
+                                                (msg)=>{
+                                                }
+                                                )
+                                        }
+
                                         if (root.visible)
                                         getServerDelayed.restart()
                                     },
@@ -54,6 +65,14 @@ Rectangle{
                 LabelTitle{
                     text:modelData.hostname
                 }
+                LabelTitle{
+                    text: "来自服务器"+net
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                    color: "yellow"
+                    visible: net
+                }
+
             }
             ItemItemBase{
                 width: 50
@@ -149,6 +168,7 @@ Rectangle{
                     anchors.centerIn: parent
                     height: parent.height-10
                     id:lbr
+                    enabled: !net
                     text: qsTr("移除")
                     onClicked: {
                         let newModels =coreModels.hostListModels

@@ -4,7 +4,7 @@ import "../Base"
 Item {
     id:root
 
-    property var hostList: coreModels.hostListModels
+    property var hostList: coreModels.allHostListModels//coreModels.hostListModels
     property int hostIndex: coreModels.hostIndex
     property string protocol: hostList[hostIndex].protocol
     property string hostname: hostList[hostIndex].hostname

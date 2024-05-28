@@ -17,6 +17,11 @@ Item {
     function _getServerDelayed_(serverUrl,success,failure){//内部调用
         return ajax.get(url(serverUrl,"getDelayed"),success,failure)
     }
+    function _getServerList_(serverUrl,success,failure){
+        return ajax.get(url(serverUrl,"getServerList"),success,failure)
+    }
+
+
     function getServerDelayed(success,failure){     // 空调用，获取延时
          return _getServerDelayed_(apiConfig.serverUrl,success,failure)
     }

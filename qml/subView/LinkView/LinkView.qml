@@ -12,6 +12,47 @@ ApplicationWindow{
     width: 1000
     height: 500
     title: "切换服务器连接"
+    property var ipList: []
+    property var serverIpList: {
+
+    }
+    property bool hasServerIpList: false
+
+    Component.onCompleted: {
+        let ipList_=[]
+        console.log("coreModels.hostListModels")
+        console.log(coreModels.hostListModels)
+        coreModels.hostListModels.forEach((value,index)=>{
+                    value["net"]=false
+                    console.log(JSON.stringify(value))
+                    ipList_.push(value)
+                                          }
+                    )
+        ipList=ipList_
+        // ipList=coreModels.hostListModels
+        coreModels.allHostListModels=ipList_
+    }
+
+    function setServerIpList(ipList_){
+        console.log("setServerIpList")
+        serverIpList=ipList_
+        hasServerIpList=true
+        let _ipList_=[]
+
+        coreModels.hostListModels.forEach((value,index)=>{
+                    value["net"]=false
+                    _ipList_.push(value)
+                                          }
+                    )
+        ipList_.forEach((value,index)=>{
+                    value["net"]=true
+                    _ipList_.push(value)
+                                          }
+                    )
+    coreModels.allHostListModels=ipList_
+
+    }
+
     flags: Qt.Dialog
     function open(){
         visible=true
@@ -29,6 +70,8 @@ ApplicationWindow{
         // 关闭
         root.visible=false
     }
+
+
     ColumnLayout{
         anchors.fill: parent
         Label{
@@ -37,6 +80,8 @@ ApplicationWindow{
             Layout.alignment: Qt.AlignHCenter
             color: "blue"
         }
+
+
         Item{
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -44,7 +89,7 @@ ApplicationWindow{
                 anchors.fill: parent
                 clip: true
                 currentIndex: coreModels.hostIndex
-                model: coreModels.hostListModels
+                model:coreModels.allHostListModels// ipList//coreModels.hostListModels
 
                 highlight:Rectangle{
                         border.color: "red"
@@ -114,6 +159,8 @@ ApplicationWindow{
                    }
                }
            }
+
+
     }
 
 }
