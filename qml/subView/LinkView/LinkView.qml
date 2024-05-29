@@ -30,7 +30,7 @@ ApplicationWindow{
                     )
         ipList=ipList_
         // ipList=coreModels.hostListModels
-        coreModels.allHostListModels=ipList_
+        coreModels.allHostListModels=ipList
     }
 
     function setServerIpList(ipList_){
@@ -40,16 +40,16 @@ ApplicationWindow{
         let _ipList_=[]
 
         coreModels.hostListModels.forEach((value,index)=>{
-                    value["net"]=false
                     _ipList_.push(value)
                                           }
                     )
         ipList_.forEach((value,index)=>{
-                    value["net"]=true
+
                     _ipList_.push(value)
                                           }
                     )
-    coreModels.allHostListModels=ipList_
+    ipList=_ipList_
+    coreModels.allHostListModels=ipList
 
     }
 
@@ -89,7 +89,7 @@ ApplicationWindow{
                 anchors.fill: parent
                 clip: true
                 currentIndex: coreModels.hostIndex
-                model:coreModels.allHostListModels// ipList//coreModels.hostListModels
+                model:ipList// ipList//coreModels.hostListModels
 
                 highlight:Rectangle{
                         border.color: "red"

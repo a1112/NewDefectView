@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.15
 import "../../btns"
 
 Rectangle{
+    property bool isNet: index>=coreModels.hostListModels.length
     height: autoSize.itemTabHeight*1.5
      property string errorMsg: ""
      property string serverUrl: modelData.protocol+modelData.hostname+":"+modelData.port
@@ -66,11 +67,11 @@ Rectangle{
                     text:modelData.hostname
                 }
                 LabelTitle{
-                    text: "来自服务器"+net
+                    text: "来自服务器"
                     anchors.right: parent.right
                     anchors.bottom: parent.bottom
                     color: "yellow"
-                    visible: net
+                    visible: isNet
                 }
 
             }
@@ -168,7 +169,7 @@ Rectangle{
                     anchors.centerIn: parent
                     height: parent.height-10
                     id:lbr
-                    enabled: !net
+                    enabled: !isNet
                     text: qsTr("移除")
                     onClicked: {
                         let newModels =coreModels.hostListModels

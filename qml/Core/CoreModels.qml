@@ -132,19 +132,22 @@ Item {
             hostname:"10.9.55.253",
             port:809,
             protocol:"http://",
-            msg:"2250 服务器"
+            msg:"2250 服务器",
+            "net":false
         },
         {
             hostname:"10.9.58.180",
             port:809,
             protocol:"http://",
-            msg:"热处理"
+            msg:"热处理",
+            "net":false
         },
         {
             hostname:"127.0.0.1",
             port:809,
             protocol:"http://",
-            msg:"本地测试"
+            msg:"本地测试",
+            "net":false
         }]
 
     property var allHostListModels: []
