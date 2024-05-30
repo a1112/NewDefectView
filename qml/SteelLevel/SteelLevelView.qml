@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import "ExportView"
+import "DefectTabe"
 import "../Base"
 import "SteelLevelList"
 import "SteelLevelMain"
@@ -39,5 +40,9 @@ Item {
 
     }
 
+    DefectTabeView{
+        id:defectTabelView
+
+    }
 
 }

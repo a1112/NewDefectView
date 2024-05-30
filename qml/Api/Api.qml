@@ -123,4 +123,11 @@ Item {
 
 
     }
+
+
+    function getLevelTabel(){
+        return ajax.get(apiConfig.url("steelLevel/getLevelTabel"),success,failure)
+
+    }
+
 }

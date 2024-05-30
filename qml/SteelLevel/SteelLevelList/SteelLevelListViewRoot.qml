@@ -29,7 +29,24 @@ ColumnLayout {
             ItemDelegate{
                 height: 30
                 width: 35
+                ToolTip.text: "判级图谱"
+                ToolTip.visible: hovered
             EffectImage{
+                height: 30
+                source: coreStyle.getIcon("pie")
+            }
+            onClicked: {
+                console.log("判级图谱")
+                defectTabelView.open()
+            }
+            }
+            ItemDelegate{
+                height: 30
+                width: 35
+                ToolTip.text: "导出判级信息"
+                ToolTip.visible: hovered
+            EffectImage{
+
                 height: 30
                 source: coreStyle.getIcon("uploading")
             }
