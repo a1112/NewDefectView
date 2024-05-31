@@ -13,7 +13,7 @@ Popup  {
         anchors.fill: parent
         RowLayout{
             Layout.fillWidth:true
-            height: 45
+            height: 35
             Item{
                 Layout.fillWidth:true
                 height: 1
@@ -21,7 +21,7 @@ Popup  {
             Label{
                 id:title
                 text: "数据导出"
-                font.pixelSize: 30
+                font.pixelSize: 25
                 font.bold: true
                 color:Material.color(Material.Blue)
             }
@@ -49,6 +49,7 @@ Popup  {
 
                 Loader{
                     width: parent.width
+                    height: parent.height
                     sourceComponent:body
                 }
             }

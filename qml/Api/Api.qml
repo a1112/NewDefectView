@@ -120,12 +120,10 @@ Item {
     }
     function exportSteelLevelByTime(startTime,endTime,fileName,success,failure){
         return ajax.get(apiConfig.url("steelLevel/exportSteelLevelByTime",startTime.format("yyyy-MM-dd hh:mm:ss"),endTime.format("yyyy-MM-dd hh:mm:ss"),fileName),success,failure)
-
-
     }
 
 
-    function getLevelTabel(){
+    function getLevelTabel(success,failure){
         return ajax.get(apiConfig.url("steelLevel/getLevelTabel"),success,failure)
 
     }

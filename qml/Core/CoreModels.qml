@@ -171,6 +171,21 @@ Item {
         dynamicRoles: true
     }
 
+    property ListModel defectTabelModel : ListModel{
+
+    }
+
+    function initLevelTabel(data){
+        console.log("initLevelTabel-----")
+
+        defectTabelModel.clear()
+        data.forEach(
+               (value,index)=>{
+                        console.log(value)
+                                   defectTabelModel.append(value)
+                                                         }
+               )
+    }
 
     property string unitType: "m"
 }

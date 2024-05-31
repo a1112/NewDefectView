@@ -6,10 +6,31 @@ PopupBase{
     id:root
     anchors.centerIn: parent
     width: 800
-    height: 400
-    title:"数据导出"
-    property SampleItemTime timeItem
-        property SampleItemFileOut fileOut_id
+    height: 800
+    title:"判级规则"
+
+    onVisibleChanged: {
+        if (visible){
+            console.log("initLevelTabel")
+            api.getLevelTabel(
+                        (result)=>{
+                            // console.log(result)
+                             let reData = JSON.parse(result)
+                               coreModels.initLevelTabel(reData)
+                         },
+                         (errorMsg)=>{
+                             console.log(errorMsg)
+                         }
+                        )
+
+
+        }
+
+    }
+
+
+    body:LevelTaelView{
+    }
 
 
     footer:Item{

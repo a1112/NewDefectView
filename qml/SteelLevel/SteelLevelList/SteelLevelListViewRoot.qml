@@ -6,6 +6,7 @@ import "Head"
 import "Footer"
 import "../../Comps/SimpleList"
 import "../../Base"
+import "../../btns"
 SplitView{
     orientation :Qt.Vertical
 ColumnLayout {
@@ -31,7 +32,7 @@ ColumnLayout {
                 width: 35
                 ToolTip.text: "判级图谱"
                 ToolTip.visible: hovered
-            EffectImage{
+            ColorImageButton{
                 height: 30
                 source: coreStyle.getIcon("pie")
             }
@@ -46,7 +47,6 @@ ColumnLayout {
                 ToolTip.text: "导出判级信息"
                 ToolTip.visible: hovered
             EffectImage{
-
                 height: 30
                 source: coreStyle.getIcon("uploading")
             }

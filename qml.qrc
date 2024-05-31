@@ -389,5 +389,8 @@
         <file>qml/SteelLevel/ExportView/SampleItemName.qml</file>
         <file>js/dateformat.js</file>
         <file>qml/SteelLevel/DefectTabe/DefectTabeView.qml</file>
+        <file>qml/SteelLevel/DefectTabe/LevelTaelView.qml</file>
+        <file>qml/SteelLevel/DefectTabe/TabelList.qml</file>
+        <file>qml/SteelLevel/DefectTabe/TabelView.qml</file>
     </qresource>
 </RCC>
