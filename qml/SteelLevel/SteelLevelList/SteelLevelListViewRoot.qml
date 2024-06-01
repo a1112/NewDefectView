@@ -40,6 +40,10 @@ ColumnLayout {
                 console.log("判级图谱")
                 defectTabelView.open()
             }
+            onDoubleClicked: {
+                Qt.openUrlExternally(api.getLevelTabelUrl())
+
+            }
             }
             ItemDelegate{
                 height: 30

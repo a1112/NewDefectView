@@ -6,24 +6,24 @@ Item {
     height: 500
     id:levelTabel
     property int currentDefectIndex: 0
-
-RowLayout{
-anchors.fill: parent
-
-TabelList{
-    model: coreModels.defectTabelModel
-    width: 220
-    Layout.fillHeight: true
-    height: levelTabel.height
-}
-
-TabelView{
-    model: coreModels.defectTabelModel
-    Layout.fillWidth: true
-    Layout.fillHeight: true
-        height: levelTabel.height
-}
-
-
-}
+    RowLayout{
+        anchors.fill: parent
+        TabelList{
+            model: coreModels.defectTabelModel
+            width: 220
+            Layout.fillHeight: true
+            height: levelTabel.height
+        }
+        Rectangle{
+            width: 1
+            color: "white"
+            height: levelTabel.height
+        }
+        TabelView{
+            model: coreModels.defectTabelModel
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            height: levelTabel.height
+        }
+    }
 }

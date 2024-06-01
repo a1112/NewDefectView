@@ -174,10 +174,13 @@ Item {
     property ListModel defectTabelModel : ListModel{
 
     }
+    property var defectTabelData: {
+
+    }
 
     function initLevelTabel(data){
         console.log("initLevelTabel-----")
-
+        defectTabelData=data
         defectTabelModel.clear()
         data.forEach(
                (value,index)=>{
@@ -189,3 +192,4 @@ Item {
 
     property string unitType: "m"
 }
+
