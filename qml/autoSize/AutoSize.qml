@@ -10,12 +10,19 @@ Item {
     property real screenWidth: desktopAvailableWidth/Screen.pixelDensity/25.4
     property real screenHeight: desktopAvailableHeight/Screen.pixelDensity/25.4
     property real screenSize: Math.sqrt(screenWidth**2+screenHeight**2)
+
+    function getDpi(){
+
+        return Screen.pixelDensity*25.4*appScale
+
+    }
+
     property real dpi: Screen.pixelDensity*25.4*appScale
 
     property real appScale: {
         console.log("screenSize",screenSize)
-        if (screenSize>40)
-            return 1
+        if (screenSize>80)
+            return 1.5
         return screenSize>20?1:screenSize>16?0.8:0.7
     }
     property real titleHeadHeight: 0.5*dpi  // 标题高度

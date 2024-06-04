@@ -37,9 +37,15 @@ Item {
                     checked: steelLevelCore.canVasScale==steelLevelCore.maxCanVasScale
                     onClicked: {
                         steelLevelCore.canVasScale=Qt.binding(()=>steelLevelCore.maxCanVasScale)
-                        //            steelLevelCore.currentCanVasLen=Qt.binding(()=>steelLevelCore.maxCanVasLen)
+                        //   steelLevelCore.currentCanVasLen=Qt.binding(()=>steelLevelCore.maxCanVasLen)
                     }
                 }
+
+                Button{
+                    text: "重新判级"
+                    height: parent.height
+                }
+
             }
 
         }

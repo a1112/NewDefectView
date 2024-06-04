@@ -21,7 +21,7 @@ Row {
         id:nTF
         placeholderText:"年"
         currentIndex:0
-        width: 1*dpi
+        width: 125
         model:{
         let list=[]
             for (let i=0;i<10;i++)
@@ -34,7 +34,7 @@ Row {
         id:mTF
         placeholderText:"月"
         currentIndex:0
-        width: 0.9*dpi
+        width:100
         model:{
         let list=[]
             for (let i=0;i<12;i++)
@@ -48,7 +48,7 @@ Row {
         id:dTF
         placeholderText:"日"
         currentIndex:0
-        width:  0.9*dpi
+        width: 100
         model:{
             let list=[]
             let days =  new Date(2020+fullYearIndex,monthIndex+1,0).getDate()

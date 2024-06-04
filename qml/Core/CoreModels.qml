@@ -180,7 +180,7 @@ Item {
 
     function initLevelTabel(data){
         console.log("initLevelTabel-----")
-        defectTabelData=data
+        defectTabelData = data
         defectTabelModel.clear()
         data.forEach(
                (value,index)=>{

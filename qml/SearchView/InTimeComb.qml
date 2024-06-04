@@ -13,19 +13,19 @@ Row {
         id:hours_comb
         model: 24
         placeholderText:"点"
-        width: 0.9*dpi
+        width: 100
         currentIndex: 0
     }
     TextFieldTime{
         id:minutes_comb
-        width: 0.9*dpi
+        width: 100
         model: 60
         placeholderText:"分"
         currentIndex: 0
     }
     TextFieldTime{
         visible: false
-        width: 0.5*api
+        width:100
         id:seconds_comb
         currentIndex: 0
         model: 60

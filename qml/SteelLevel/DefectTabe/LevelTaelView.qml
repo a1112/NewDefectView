@@ -20,7 +20,6 @@ Item {
             height: levelTabel.height
         }
         TabelView{
-            model: coreModels.defectTabelModel
             Layout.fillWidth: true
             Layout.fillHeight: true
             height: levelTabel.height
