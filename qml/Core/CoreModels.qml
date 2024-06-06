@@ -179,7 +179,6 @@ Item {
     }
 
     function initLevelTabel(data){
-        console.log("initLevelTabel-----")
         defectTabelData = data
         defectTabelModel.clear()
         data.forEach(

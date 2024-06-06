@@ -14,7 +14,6 @@ PopupBase{
             console.log("initLevelTabel")
             api.getLevelTabel(
                         (result)=>{
-                            // console.log(result)
                              let reData = JSON.parse(result)
                                coreModels.initLevelTabel(reData)
                          },
@@ -23,7 +22,7 @@ PopupBase{
                          }
                         )
 
-
+            api.
         }
 
     }

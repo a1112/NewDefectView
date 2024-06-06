@@ -29,6 +29,15 @@ Item {
 
     }
 
+
+    property var defectInfoData: {
+        return {}
+    }
+    property ListModel defectInfoModel: ListModel{
+
+
+    }
+
     function listToString(list_){
         return  +list_[0]+"\n"+
                 "长度范围："+list_[1]+"\n"+
@@ -52,6 +61,8 @@ Item {
             value["levelNsg_B"]=listToString(value["3"])
             steelModel.append(value)
         }
+
+        defectInfoModel.clear()
     }
 
     onSteelTypeIndexChanged: {
@@ -62,6 +73,27 @@ Item {
     }
     ColumnLayout{
         anchors.fill: parent
+
+        TabBar {
+             id: bar
+             currentIndex: currentSettingIndex
+             onCurrentIndexChanged: {
+                currentSettingIndex = currentIndex
+             }
+             TabButton {
+                 width: 120
+                 text: qsTr("缺陷判级")
+             }
+             TabButton {
+                 width: 120
+                 text: qsTr("物料判级")
+             }
+             TabButton {
+                 width: 120
+                 text: qsTr("对照表")
+             }
+         }
+
         RowLayout{
             Layout.fillWidth: true
             Item{
@@ -73,20 +105,7 @@ Item {
             font.pixelSize: 20
         }
             }
-        TabBar {
-             id: bar
-             width: 200
-             currentIndex: currentSettingIndex
-             onCurrentIndexChanged: {
-                currentSettingIndex = currentIndex
-             }
-             TabButton {
-                 text: qsTr("缺陷判级")
-             }
-             TabButton {
-                 text: qsTr("物料判级")
-             }
-         }
+
         }
         SwipeView{
             currentIndex: currentSettingIndex
@@ -100,6 +119,10 @@ Item {
             }
             SteelSettingTabel{
             }
+            DefectInfoTabel{
+
+            }
+
         }
 
 }
