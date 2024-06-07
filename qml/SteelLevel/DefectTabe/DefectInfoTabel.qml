@@ -7,7 +7,7 @@ Item{
     ListView {
         anchors.fill: parent
         id: listView
-        model:defectInfoModel
+        model:coreModels.defectInfoList
         delegate:
             DefectInfoItem{
         }

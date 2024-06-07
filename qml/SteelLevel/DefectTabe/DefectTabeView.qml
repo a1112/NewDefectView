@@ -22,7 +22,16 @@ PopupBase{
                          }
                         )
 
-            api.
+            api.getDefectInfo(
+                        (result)=>{
+                            console.log("initDefectInfo")
+                             let reData = JSON.parse(result)
+                             coreModels.initDefectInfo(reData)
+                         },
+                         (errorMsg)=>{
+                             console.log(errorMsg)
+                         }
+                        )
         }
 
     }

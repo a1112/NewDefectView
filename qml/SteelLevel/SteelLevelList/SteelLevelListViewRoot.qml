@@ -41,7 +41,7 @@ ColumnLayout {
                 defectTabelView.open()
             }
             onDoubleClicked: {
-                Qt.openUrlExternally(api.getLevelTabelUrl())
+                Qt.openUrlExternally(api.   getLevelTabelUrl())
 
             }
             }

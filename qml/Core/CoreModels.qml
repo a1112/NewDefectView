@@ -175,7 +175,6 @@ Item {
 
     }
     property var defectTabelData: {
-
     }
 
     function initLevelTabel(data){
@@ -183,12 +182,23 @@ Item {
         defectTabelModel.clear()
         data.forEach(
                (value,index)=>{
-                        console.log(value)
-                                   defectTabelModel.append(value)
-                                                         }
+                console.log(value)
+                defectTabelModel.append(value)}
                )
     }
+    property var defectInfo: {
+    }
+    property ListModel defectInfoList: ListModel{
+    }
 
+    function initDefectInfo(data){
+        defectInfo = data
+        for(let k in data){
+            data[k]["defectClass"]=k
+            defectInfoList.append(data[k])
+
+        }
+    }
     property string unitType: "m"
 }
 
