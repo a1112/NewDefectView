@@ -85,6 +85,10 @@ Rectangle{
             }
         }
     }
+
+    FpsItem{
+    }
+
     Flickable{
         focus: true
         id:flick
@@ -259,6 +263,8 @@ Rectangle{
                     }
                 }
     }
+
+
     ImageSetingMenu{
         id:imsetMenu
     }
@@ -288,4 +294,6 @@ Rectangle{
             }
         }
     }
+
+
 }

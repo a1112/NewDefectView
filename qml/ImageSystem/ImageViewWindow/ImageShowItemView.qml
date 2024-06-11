@@ -1,8 +1,10 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import "../../Comps"
+import "../../Base"
 import QtGraphicalEffects 1.14
 Item {
+
     property bool isMenuVisibleItem: imageViewCore.menuVisible &&
                                      cameraIndex == imageViewCore.menu_cacameraIndex&&
                                      index==imageViewCore.menu_imageIndex

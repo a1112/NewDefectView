@@ -399,5 +399,6 @@
         <file>qml/SteelLevel/DefectTabe/SteelItemView.qml</file>
         <file>qml/SteelLevel/DefectTabe/DefectInfoTabel.qml</file>
         <file>qml/SteelLevel/DefectTabe/DefectInfoItem.qml</file>
+        <file>qml/Base/FpsItem.qml</file>
     </qresource>
 </RCC>
