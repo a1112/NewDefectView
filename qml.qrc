@@ -400,5 +400,6 @@
         <file>qml/SteelLevel/DefectTabe/DefectInfoTabel.qml</file>
         <file>qml/SteelLevel/DefectTabe/DefectInfoItem.qml</file>
         <file>qml/Base/FpsItem.qml</file>
+        <file>qml/ImageSystem/DefectMapView.qml</file>
     </qresource>
 </RCC>

@@ -10,7 +10,14 @@ Item {
     property DefectNavigationViewitem defectNavigationViewitemDown
     property DefectNavigationViewitem defectNavigationViewitemUp
     property int maxShowimageNum:50  //Math.max(defectNavigationViewitemDown.maxShowimageNum,defectNavigationViewitemUp.maxShowimageNum)
-    property ListModel upDefctsModel: ListModel{}
+    property ListModel upDefctsModel: ListModel{
+/*
+
+
+
+
+*/
+    }
     property var upWidthData: []
     property var downWidthData: []
     property var upDefcts

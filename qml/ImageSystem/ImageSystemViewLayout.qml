@@ -232,7 +232,11 @@ Rectangle{
         }
     }
     ActiveMenuBar{}
+    DefectMapView{
 
+        height: root.height
+        anchors.right: parent.right
+    }
     Item{
         anchors.right: parent.right
         anchors.bottom: parent.bottom
