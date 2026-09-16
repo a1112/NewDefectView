@@ -1,3 +1,4 @@
+#include "ProjectResourceMonitor.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QtWidgets/QApplication>
@@ -20,6 +21,7 @@ int main(int argc, char *argv[])
 //        view.moveToScreenCenter();
 //        view.show();
         QQmlApplicationEngine engine;
+    ProjectResources::install(engine);
 //        engine.addImportPath(TaoQuickImportPath);
 //        engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
         engine.load(url);
