@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "units": {},
+  "unmanaged": [
+    {
+      "name": "application",
+      "reason": "No verified product version in qmake metadata. qml/version/version.qml is empty. Use source commit identity until a deliberate release baseline is approved.",
+      "paths": [
+        "NewDefectView.pro",
+        "qml/version/version.qml"
+      ]
+    }
+  ],
+  "notes": [
+    "Existing version authorities and independent release units are preserved. This adoption does not assert that a manifest version has been released."
+  ]
+}
