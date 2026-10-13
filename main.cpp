@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
         QApplication app(argc, argv);
+    app.setOrganizationName(QStringLiteral("a1112"));
+    app.setApplicationName(QStringLiteral("NewDefectView"));
         const QUrl url(QStringLiteral("qrc:/main.qml"));
          qmlRegisterType<Clipboard>("Clipboard",1,0,"Clipboard");
          qmlRegisterType<OS>("Os",1,0,"Os");
