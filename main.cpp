@@ -1,3 +1,4 @@
+#include "StartupWorkAreas.h"
 #include "ProjectResourceMonitor.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -13,6 +14,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
         QApplication app(argc, argv);
+    app.setOrganizationName(QStringLiteral("a1112"));
+    app.setApplicationName(QStringLiteral("NewDefectView"));
         const QUrl url(QStringLiteral("qrc:/main.qml"));
          qmlRegisterType<Clipboard>("Clipboard",1,0,"Clipboard");
          qmlRegisterType<OS>("Os",1,0,"Os");
@@ -21,6 +24,7 @@ int main(int argc, char *argv[])
 //        view.moveToScreenCenter();
 //        view.show();
         QQmlApplicationEngine engine;
+    installStartupWorkAreas(engine);
     ProjectResources::install(engine);
 //        engine.addImportPath(TaoQuickImportPath);
 //        engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
