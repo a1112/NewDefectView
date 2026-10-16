@@ -69,23 +69,33 @@ ApplicationWindow {
         }
         if (!target) return
         screen = target
-        // Reserve desktop edges and titlebar space in addition to the work-area limit.
-        var aw = Math.max(1, Math.min(target.width, target.desktopAvailableWidth) - 48)
-        var ah = Math.max(1, Math.min(target.height, target.desktopAvailableHeight) - 64)
-        var left = target.virtualX + (target.width - aw) / 2
-        var top = target.virtualY + (target.height - ah) / 2
-        minimumWidth = Math.min(800, aw, saved && pw >= 320 ? pw : 800)
-        minimumHeight = Math.min(520, ah, saved && ph >= 240 ? ph : 520)
+        // Use native QScreen.availableGeometry: a left Dock or top panel changes the origin too.
+        var area = {x: target.virtualX, y: target.virtualY, width: target.width, height: target.height}
+        var nativeAreas = typeof startupWorkAreas !== "undefined" ? startupWorkAreas : []
+        for (var j = 0; j < nativeAreas.length; ++j) {
+            var nativeArea = nativeAreas[j]
+            if (nativeArea.screenX === target.virtualX && nativeArea.screenY === target.virtualY
+                    && nativeArea.screenWidth === target.width && nativeArea.screenHeight === target.height) {
+                area = nativeArea
+                break
+            }
+        }
+        var aw = Math.max(1, area.width - 48)
+        var ah = Math.max(1, area.height - 64)
+        var left = area.x + 24
+        var top = area.y + 32
+        minimumWidth = Math.min(800, aw, saved ? pw : 800)
+        minimumHeight = Math.min(520, ah, saved ? ph : 520)
         if (useSaved && !saved) {
             pw = Math.min(1100, Math.floor(aw * 0.82))
             ph = Math.min(720, Math.floor(ah * 0.82))
             px = left + (aw - pw) / 2
             py = top + (ah - ph) / 2
+            minimumWidth = Math.min(minimumWidth, pw)
+            minimumHeight = Math.min(minimumHeight, ph)
         }
-        if (saved && px >= target.virtualX && py >= target.virtualY
-                && px + pw <= target.virtualX + target.width
-                && py + ph <= target.virtualY + target.height
-                && pw <= target.desktopAvailableWidth && ph <= target.desktopAvailableHeight) {
+        if (saved && px >= area.x && py >= area.y
+                && px + pw <= area.x + area.width && py + ph <= area.y + area.height) {
             width = pw; height = ph; x = px; y = py
             return
         }
@@ -94,6 +104,8 @@ ApplicationWindow {
         x = Math.max(left, Math.min(px, left + aw - width))
         y = Math.max(top, Math.min(py, top + ah - height))
     }
+    property var startupWorkAreaSnapshot: typeof startupWorkAreas !== "undefined" ? startupWorkAreas : []
+    onStartupWorkAreaSnapshotChanged: if (startupGeometryReady && visibility === Window.Windowed) fitStartupGeometry(false)
     onScreenChanged: if (startupGeometryReady && visibility === Window.Windowed) fitStartupGeometry(false)
     onClosing: {
         if (visibility === Window.Windowed) {

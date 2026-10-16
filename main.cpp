@@ -1,3 +1,4 @@
+#include "StartupWorkAreas.h"
 #include "ProjectResourceMonitor.h"
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -23,6 +24,7 @@ int main(int argc, char *argv[])
 //        view.moveToScreenCenter();
 //        view.show();
         QQmlApplicationEngine engine;
+    installStartupWorkAreas(engine);
     ProjectResources::install(engine);
 //        engine.addImportPath(TaoQuickImportPath);
 //        engine.rootContext()->setContextProperty("taoQuickImagePath", TaoQuickImagePath);
